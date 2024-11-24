@@ -14,6 +14,7 @@ const __dirname = path.dirname(__filename);
 // Serve the React build directory
 //app.use(express.static(path.join(__dirname)));
 
+
 // Route for React app
 /*app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname);
