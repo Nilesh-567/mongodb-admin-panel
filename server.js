@@ -14,6 +14,10 @@ const __dirname = path.dirname(__filename);
 // Serve the React build directory
 //app.use(express.static(path.join(__dirname)));
 
+// Alternatively, redirect to Netlify URL
+app.get('/', (req, res) => {
+  res.redirect('https://lovely-treacle-c111d4.netlify.app/');
+});
 
 // Route for React app
 /*app.get("*", (req, res) => {
