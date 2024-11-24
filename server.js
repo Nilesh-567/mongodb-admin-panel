@@ -5,7 +5,7 @@ import { fileURLToPath } from "url";
 import { checkConnection } from "./db.js"; // Ensure `db.js` is in the same directory
 
 const app = express();
-const PORT = 3004;
+const PORT = 3002;
 
 // Resolve __dirname for ES modules
 const __filename = fileURLToPath(import.meta.url);
