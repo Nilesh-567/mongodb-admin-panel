@@ -1,11 +1,14 @@
 import express from "express";
 import path from "path";
+var cors = require('cors')
 import { Server } from "socket.io";
 import { fileURLToPath } from "url";
 import { checkConnection } from "./db.js"; // Ensure `db.js` is in the same directory
 
 const app = express();
 const PORT = 3002;
+
+app.use(cors()); 
 
 // Resolve __dirname for ES modules
 const __filename = fileURLToPath(import.meta.url);
@@ -15,9 +18,9 @@ const __dirname = path.dirname(__filename);
 //app.use(express.static(path.join(__dirname)));
 
 // Alternatively, redirect to Netlify URL
-app.get('/', (req, res) => {
+/*app.get('/', (req, res) => {
   res.redirect('https://lovely-treacle-c111d4.netlify.app/');
-});
+});*/ 
 
 // Route for React app
 /*app.get("*", (req, res) => {
@@ -30,7 +33,12 @@ const server = app.listen(PORT, () => {
 });
 
 // Initialize Socket.IO
-const io = new Server(server);
+const io = new Server(server , {
+  cors: {
+    origin: 'https://lovely-treacle-c111d4.netlify.app',
+    methods: ['GET', 'POST'],
+  },
+});
 
 // Handle Socket.IO connections
 io.on("connection", (socket) => {
