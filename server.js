@@ -1,6 +1,6 @@
 import express from "express";
 import path from "path";
-var cors = require('cors')
+import cors from "cors"; 
 import { Server } from "socket.io";
 import { fileURLToPath } from "url";
 import { checkConnection } from "./db.js"; // Ensure `db.js` is in the same directory
