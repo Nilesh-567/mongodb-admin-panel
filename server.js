@@ -5,14 +5,14 @@ import { fileURLToPath } from "url";
 import { checkConnection } from "./db.js"; // Ensure `db.js` is in the same directory
 
 const app = express();
-const PORT = 3002;
+const PORT = 3004;
 
 // Resolve __dirname for ES modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Serve the React build directory
-app.use(express.static(path.join(__dirname)));
+//app.use(express.static(path.join(__dirname)));
 
 // Route for React app
 /*app.get("*", (req, res) => {
